@@ -6,8 +6,8 @@ namespace Console_Aplication
     {
         static void Main(string[] args)
         {
-            
-            
+
+
 
         }
     }

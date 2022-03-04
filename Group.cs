@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Console_Aplication
 {
-     class Group
+    class Group
     {
         public static int count = 1;
         public string No;
@@ -17,21 +17,21 @@ namespace Console_Aplication
             switch (Category)
             {
                 case Categories.Programing:
-                 No = $"P{count}";
+                    No = $"P{count}";
                     break;
-                case Categories.Sysem_Adminstration:
-                 No =  $"S{count}";
+                case Categories.System_Adminstration:
+                    No = $"S{count}";
                     break;
                 case Categories.Design:
-                No=  $"D{count}";
+                    No = $"D{count}";
                     break;
                 default:
                     break;
             }
 
             Category = category;
-            count++;   
+            count++;
         }
-        
-     }
+
+    }
 }

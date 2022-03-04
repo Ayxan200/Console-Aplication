@@ -9,9 +9,9 @@ namespace Console_Aplication
         public string Fullname;
         public string GroupNo;
         public string Type;
-        public Student(string fullname,string groupNo)
+        public Student(string fullname, string groupNo)
         {
-            
+
             Fullname = fullname;
             GroupNo = groupNo;
         }

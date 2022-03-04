@@ -7,10 +7,10 @@ namespace Console_Aplication
 
     enum Categories
     {
-        Programing=1,
-        Sysem_Adminstration,
+        Programing = 1,
+        System_Adminstration,
         Design
 
     }
 
-}   
+}
