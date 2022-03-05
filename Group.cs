@@ -32,6 +32,7 @@ namespace Console_Aplication
             Category = category;
             count++;
         }
+        
 
     }
 }

@@ -15,5 +15,9 @@ namespace Console_Aplication
             Fullname = fullname;
             GroupNo = groupNo;
         }
+        public override string ToString()
+        {
+            return $"Fullname:{Fullname} GroupNo:{GroupNo} ";
+        }
     }
 }

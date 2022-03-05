@@ -13,4 +13,3 @@ namespace Console_Aplication.Interfaces
         public void GetAllStudents();
     }
 }
-

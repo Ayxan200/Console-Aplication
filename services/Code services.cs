@@ -56,7 +56,7 @@ namespace Console_Aplication.services
             foreach (Group item in _groups)
             {
                 if (item.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
-                {group= item;
+                { group= item;
                     return group; 
                 }
             }
@@ -65,12 +65,20 @@ namespace Console_Aplication.services
 
         public void GetAllGroup()
         {
-            throw new NotImplementedException();
+            if (_groups.Count == 0) 
+            {
+                Console.WriteLine("There is no Group in the Academy");
+                return;
+            }
+            foreach (Group group in _groups)
+            {
+                Console.WriteLine(group);
+            }
         }
 
         public void GetAllStudents()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
