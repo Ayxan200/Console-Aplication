@@ -24,23 +24,31 @@ namespace Console_Aplication.services
             return group.No;
         }
 
+        public void CreatStudents(string No, string fullname)
+        {
+            Group group = FindGroup(No);
+            Student student = new Student(fullname,group.No);
+            group.Students.Add(student);
+
+        }
+
         public void EditGroup(string No, string newNo, Group group)
         {
             Group existedgroup = null;
             foreach (Group item in _groups)
             {
-                if (group.No.ToLower().Trim() == newNo.ToLower(). Trim()) ;
+                if (group.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
                 {
                     existedgroup = group;
                 }
             }
-            if (existedgroup == null) 
+            if (existedgroup == null)
             {
                 Console.WriteLine("Please choose correct Group No");
                 return;
             }
 
-            foreach (Group group1 in _groups )
+            foreach (Group group1 in _groups)
             {
                 if (group.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
                 {
@@ -49,15 +57,15 @@ namespace Console_Aplication.services
                 }
             }
             existedgroup.No = newNo.ToUpper();
-	    }
+        }
         public Group FindGroup(string newNo)
         {
             Group group;
             foreach (Group item in _groups)
             {
                 if (item.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
-                { group= item;
-                    return group; 
+                { group = item;
+                    return group;
                 }
             }
             return null;
@@ -65,7 +73,7 @@ namespace Console_Aplication.services
 
         public void GetAllGroup()
         {
-            if (_groups.Count == 0) 
+            if (_groups.Count == 0)
             {
                 Console.WriteLine("There is no Group in the Academy");
                 return;
@@ -78,7 +86,18 @@ namespace Console_Aplication.services
 
         public void GetAllStudents()
         {
-            
+
+
+        }
+
+        public void StudentGroupListShow(string No)
+        {
+            Group group = FindGroup(No);
+            foreach (Student student in group.Students)
+            {
+                Console.WriteLine(student);
+            }
+
         }
     }
 }

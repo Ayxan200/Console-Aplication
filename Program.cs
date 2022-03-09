@@ -16,6 +16,7 @@ namespace Console_Aplication
                 Console.WriteLine("2.Edit Group");
                 Console.WriteLine("3.Get all group");
                 Console.WriteLine("4.Get all student");
+                Console.WriteLine("5.Create Student");
                 Console.WriteLine("0.Exit");
                 string strSelection = Console.ReadLine();
                 bool result = int.TryParse(strSelection, out selection);  

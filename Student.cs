@@ -8,7 +8,7 @@ namespace Console_Aplication
     {
         public string Fullname;
         public string GroupNo;
-        public string Type;
+        public bool Type;
         public Student(string fullname, string groupNo)
         {
 
@@ -17,7 +17,7 @@ namespace Console_Aplication
         }
         public override string ToString()
         {
-            return $"Fullname:{Fullname} GroupNo:{GroupNo} ";
+            return $"Fullname:{Fullname} GroupNo:{GroupNo}";
         }
     }
 }

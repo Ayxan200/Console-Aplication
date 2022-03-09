@@ -10,7 +10,7 @@ namespace Console_Aplication
         public string No;
         public bool IsOnline;
         public int Limit;
-        public string Students;
+        public List<Student> Students = new List<Student>();
         public Categories Category;
         public Group(string fullname, string groupNo, Categories category)
         {

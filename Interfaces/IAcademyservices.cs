@@ -11,5 +11,8 @@ namespace Console_Aplication.Interfaces
         public void EditGroup(string No, string newNo, Group group);
         public void GetAllGroup();
         public void GetAllStudents();
+        public void CreatStudents();
+        public void StudentGroupListShow();
+
     }
 }
