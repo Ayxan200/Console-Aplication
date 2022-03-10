@@ -7,12 +7,12 @@ namespace Console_Aplication.Interfaces
     interface Iacademyservices
     {
         public List<Group> Groups { get; }
-        public string CreatGroup(string fullname, string groupNo, Categories category);
-        public void EditGroup(string No, string newNo, Group group);
+        public string CreatGroup(Categories category);
+        public void EditGroup(string No, string newNo);
         public void GetAllGroup();
         public void GetAllStudents();
-        public void CreatStudents();
-        public void StudentGroupListShow();
+        public void CreatStudents(string No, string fullname);
+        public void StudentGroupListShow(string No);
 
     }
 }

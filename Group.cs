@@ -12,7 +12,7 @@ namespace Console_Aplication
         public int Limit;
         public List<Student> Students = new List<Student>();
         public Categories Category;
-        public Group(string fullname, string groupNo, Categories category)
+        public Group(Categories category)
         {
             switch (Category)
             {

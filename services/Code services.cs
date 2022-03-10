@@ -8,17 +8,15 @@ namespace Console_Aplication.services
     class Code_services : Iacademyservices
     {
         private List<Group> _groups = new List<Group>();
-        private object groupNo;
+      
+
 
         public List<Group> Groups => _groups;
 
-        public string CreatGroup(string fullname, string groupNo, Categories category)
+        public string CreatGroup( Categories category)
         {
-            if (fullname != fullname || groupNo != groupNo)
-            {
-                return "Please chose valid fullname or groupNo value";
-            }
-            Group group = new Group(fullname, groupNo, category);
+            
+            Group group = new Group( category);
 
             _groups.Add(group);
             return group.No;
@@ -31,33 +29,38 @@ namespace Console_Aplication.services
             group.Students.Add(student);
 
         }
-
-        public void EditGroup(string No, string newNo, Group group)
+        public void EditGroup(string No, string newNo)
         {
-            Group existedgroup = null;
-            foreach (Group item in _groups)
-            {
-                if (group.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
-                {
-                    existedgroup = group;
-                }
-            }
+            Group existedgroup = FindGroup(No);
             if (existedgroup == null)
             {
                 Console.WriteLine("Please choose correct Group No");
                 return;
             }
+            foreach (Group item in _groups)
+            {
+                if (existedgroup.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
+                {
+                    Console.WriteLine("This group number already exist");
+                    return;
+                }
+            }
+            existedgroup.No= newNo;
+            
 
             foreach (Group group1 in _groups)
             {
-                if (group.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
+                if (group1.No.ToLower().Trim() == newNo.ToLower().Trim()) ;
                 {
-                    Console.WriteLine(existedgroup = group);
+                    Console.WriteLine(existedgroup = group1);
                     return;
                 }
             }
             existedgroup.No = newNo.ToUpper();
         }
+
+     
+
         public Group FindGroup(string newNo)
         {
             Group group;
@@ -86,7 +89,13 @@ namespace Console_Aplication.services
 
         public void GetAllStudents()
         {
-
+            foreach (var item in _groups)
+            {
+                foreach (var item1 in item.Students )
+                {
+                    Console.WriteLine(item1);
+                }
+            }
 
         }
 
